@@ -1,0 +1,14 @@
+SIM ?= verilator
+TOPLEVEL_LANG ?= verilog
+
+VERILOG_SOURCES += $(PWD)/../rtl/md_pkg.sv
+VERILOG_SOURCES += $(PWD)/../rtl/msg_decoder.sv
+VERILOG_SOURCES += $(PWD)/../rtl/stream_framer.sv
+VERILOG_SOURCES += $(PWD)/../rtl/book_engine.sv
+VERILOG_SOURCES += $(PWD)/../rtl/top_of_book.sv
+VERILOG_SOURCES += $(PWD)/../rtl/market_data_top.sv
+
+TOPLEVEL = market_data_top
+MODULE = test_market_data_top
+
+include $(shell cocotb-config --makefiles)/Makefile.sim
