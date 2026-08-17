@@ -41,7 +41,7 @@ async def send_message(dut, mtype, side, price, qty):
             pulses += 1
     dut.s_valid.value = 0
     dut.s_last.value = 0
-    for _ in range(2):
+    for _ in range(3):
         await RisingEdge(dut.clk)
         if dut.out_valid.value == 1:
             pulses += 1

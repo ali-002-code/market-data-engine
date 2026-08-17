@@ -30,6 +30,7 @@ async def send(dut, mtype, side, price, qty):
     await RisingEdge(dut.clk)
     dut.msg_valid.value = 0
     await RisingEdge(dut.clk)
+    await RisingEdge(dut.clk)
 
 
 def _flat(dut, side, kind):
