@@ -19,7 +19,7 @@ module top_of_book
   output logic        best_bid_valid,
   output logic [15:0] best_ask,
   output logic        best_ask_valid,
-  output logic [15:0] spread,
+  output logic signed [15:0] spread,
   output logic [16:0] mid_sum,
   output logic        tob_valid
 );
@@ -57,7 +57,7 @@ module top_of_book
   end
 
   assign tob_valid = best_bid_valid && best_ask_valid;
-  assign spread    = tob_valid ? (best_ask - best_bid) : 16'h0;
+  assign spread    = tob_valid ? ($signed(best_ask) - $signed(best_bid)) : 16'sh0;
   assign mid_sum   = tob_valid ? ({1'b0, best_bid} + {1'b0, best_ask}) : 17'h0;
 
 endmodule

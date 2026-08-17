@@ -74,6 +74,6 @@ class BookModel:
         return {
             "best_bid": bb,
             "best_ask": ba,
-            "spread": (ba - bb) if both else None,
+            "spread": (((ba - bb) + 0x8000) & 0xFFFF) - 0x8000 if both else None,
             "mid_sum": (bb + ba) if both else None,
         }
