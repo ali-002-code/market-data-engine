@@ -76,8 +76,9 @@ async def drive_message(dut, msg):
         await RisingEdge(dut.clk)
     dut.s_valid.value = 0
     dut.s_last.value = 0
-    # book_engine registers the update one cycle after msg completes;
-    # one extra edge lets the registered state settle to the outputs.
+    # book_engine is now a 2-stage pipeline: book_valid arrives 2 cycles
+    # after the message completes. Wait 3 edges so committed state settles.
+    await RisingEdge(dut.clk)
     await RisingEdge(dut.clk)
     await RisingEdge(dut.clk)
 
