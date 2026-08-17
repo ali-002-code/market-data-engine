@@ -1,0 +1,8 @@
++====================+===================+=========================+
+| Launch Setup Clock | Launch Hold Clock | Pin                     |
++====================+===================+=========================+
+| sys_clk            | sys_clk           | u_book/s2_qty_reg[8]/D  |
+| sys_clk            | sys_clk           | u_book/s2_qty_reg[13]/D |
+| sys_clk            | sys_clk           | u_book/s2_qty_reg[3]/D  |
+| sys_clk            | sys_clk           | u_book/s2_qty_reg[4]/D  |
++--------------------+-------------------+-------------------------+
