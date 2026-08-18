@@ -4,3 +4,10 @@ __pycache__/
 results.xml
 *.o
 venv/
+.DS_Store
+sim/results.xml
+vivado.jou
+vivado.log
+clockInfo.txt
+dfx_runtime.txt
+tight_setup_hold_pins.txt
